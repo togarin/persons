@@ -171,7 +171,11 @@ const TablePersons = () => {
         title="Создание нового сотрудника"
         subtitle="Введите имя и фамилию"
         isOpen={createModalOpen}
-        onClose={() => setCreateModalOpen(false)}
+        onClose={() => {
+            setCreateModalOpen(false)
+            setFirstName("")
+            setLastName("")    
+        }}
         disabled={isFetching || firstName === "" || lastName === ""}
         firstName={firstName}
         lastName={lastName}
@@ -185,7 +189,11 @@ const TablePersons = () => {
         title="Редактирование сотрудника"
         subtitle="Отредактируйте имя и/или фамилию"
         isOpen={editModalOpen.open}
-        onClose={() => setEditModalOpen({ open: false, person: null })}
+        onClose={() => {
+            setEditModalOpen({ open: false, person: null })
+            setFirstName("")
+            setLastName("")
+            }}
         disabled={isFetching}
         firstName={firstName}
         lastName={lastName}

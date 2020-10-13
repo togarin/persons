@@ -1,14 +1,14 @@
 {
   "person": [
     {
-      "firstName": "первый 4",
-      "lastName": "сотрудник 4",
-      "id": 2
+      "firstName": "Кенни",
+      "lastName": "Маккормик",
+      "id": 1
     },
     {
-      "firstName": "1123",
-      "lastName": "сотрудник 3",
-      "id": 7
+      "firstName": "Барт",
+      "lastName": "Симпсон",
+      "id": 2
     }
   ]
 }
