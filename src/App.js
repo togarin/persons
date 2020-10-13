@@ -4,14 +4,16 @@ import {
 } from "@material-ui/core";
 import TablePersons from "../src/components/TablePersons";
 
+import "./App.css";
+
 function App() {
 
   return (
-    <div className="root">
+    <React.Fragment>
       <Container maxWidth="lg">
         <TablePersons />
       </Container>
-    </div>
+    </React.Fragment>
   );
 }
 

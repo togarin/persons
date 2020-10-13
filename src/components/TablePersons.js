@@ -18,6 +18,8 @@ import axios from "axios";
 import CreateOrEditDialog from "./CreateOrEditDialog";
 import DeleteDialog from "./DeleteDialog";
 
+import "./TablePersons.css";
+
 const TablePersons = () => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState({
@@ -100,7 +102,7 @@ const TablePersons = () => {
       await axios.delete(`${apiUrl}${id}`);
       setPersons(persons.filter((person) => person.id !== id));
       setErrorMessage("Верный запрос");
-      setDeleteModalOpen({open: false, person: null})
+      setDeleteModalOpen({ open: false, person: null });
     } catch (error) {
       catchMessages(error);
     }
@@ -159,22 +161,23 @@ const TablePersons = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setCreateModalOpen(true)}
-      >
-        Добавить сотрудника
-      </Button>
-
+      <div className="btn-wrapper">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setCreateModalOpen(true)}
+        >
+          Добавить сотрудника
+        </Button>
+      </div>
       <CreateOrEditDialog
         title="Создание нового сотрудника"
         subtitle="Введите имя и фамилию"
         isOpen={createModalOpen}
         onClose={() => {
-            setCreateModalOpen(false)
-            setFirstName("")
-            setLastName("")    
+          setCreateModalOpen(false);
+          setFirstName("");
+          setLastName("");
         }}
         disabled={isFetching || firstName === "" || lastName === ""}
         firstName={firstName}
@@ -190,10 +193,10 @@ const TablePersons = () => {
         subtitle="Отредактируйте имя и/или фамилию"
         isOpen={editModalOpen.open}
         onClose={() => {
-            setEditModalOpen({ open: false, person: null })
-            setFirstName("")
-            setLastName("")
-            }}
+          setEditModalOpen({ open: false, person: null });
+          setFirstName("");
+          setLastName("");
+        }}
         disabled={isFetching}
         firstName={firstName}
         lastName={lastName}
