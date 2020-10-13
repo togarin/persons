@@ -40,7 +40,6 @@ const CreateOrEditDialog = ({
       />
       <TextField
         disabled={isSubmitDisabled}
-        autoFocus
         margin="dense"
         id="createlastname"
         label="Фамилия"
