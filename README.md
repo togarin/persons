@@ -1,8 +1,11 @@
 # Person list
 
-Для создания CSS-стилей использован фрйемворк для React, MaterialUI https://material-ui.com/ru/getting-started/installation/
+Using:  
+[JSON Server](https://github.com/typicode/json-server).  
+[Create React App](https://github.com/facebook/create-react-app).   
+React Hooks.   
+[MaterialUI](https://github.com/mui-org/material-ui).
 
-Для обработки данных использован json-server https://github.com/typicode/json-server
 
 Так как порты React и API серверов отличаются (3000 и 3001), то для обхода проблем с заголовками CORS в браузере при запуске на любом хосте, кроме localhost, оба веб-сервера должны проксироваться на одном порту. Это необходимо, чтобы браузер не считал асинхронные запросы в API запросами на другой host и не блокировал их.
 
